@@ -6,10 +6,6 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var specialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "=", "+", "(", ")", "{", "}", "[", "]", "?", "/", ">", "<", ".", ",", "~", "|"];
 
-
-
-
-
 //----------------------------------------------------------------------------------------------------------------------------
 function writePassword() {
   var password = generatePassword();
@@ -20,7 +16,6 @@ function writePassword() {
 //example array to store possible passwords
 var potentialPw = []
 var random = []
-
 
 //password length
 function generatePassword() {
@@ -36,19 +31,19 @@ if (passwordLength < 8 || passwordLength > 128) {
   generatePassword();
 } else {
 }
-
 //uppercase info
 var upper = confirm("Do you want your password to contain uppercase letters?");
 //pulls from uppercase array
 if (upper) {
+//concats from arrays
     potentialPw = potentialPw.concat(upperCase);
 } else { 
 }
-
 //lowercase info
 var lower = confirm("Do you want your password to contain lowercase letters?");
 //pulls from lowercase array
 if (lower) {
+  //concats from arrays
   potentialPw = potentialPw.concat(lowerCase);
 } else {
 }
@@ -56,18 +51,18 @@ if (lower) {
 var number = confirm("Do you want your password to contain numbers?");
 //pulls from numberChars array
 if (number) {
+//concats from arrays
   potentialPw = potentialPw.concat(numberChars);
 } else{
 }
-
 //special character info
 var special = confirm("Do you want your password to contain special characters?");
 //pulls from specialChars array
 if (special) {
+//concats from arrays
   potentialPw = potentialPw.concat(specialChars);
 } else{
 }
-
 //password output
 var pw = []; 
 
@@ -76,7 +71,8 @@ for (let i = 0; i < passwordLength; i++){
   pw.push(random);
 }
 
-return document.getElementById("password").innerHTML = potentialPw.join("");
+//refers to html id to print on the page
+return document.getElementById("password").innerHTML = pw.join("");
 
 //safety brace :)
 }
