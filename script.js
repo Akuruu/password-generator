@@ -27,6 +27,8 @@ if (isNaN(passwordLength)) {
   //restarts function if user does not input a number
   generatePassword();
 } else
+
+
 //if password length doesn't meet the requirements then restart
 if (passwordLength < 8 || passwordLength > 128) {
   alert("Password must be between 8 and 128 characters");
@@ -34,6 +36,8 @@ if (passwordLength < 8 || passwordLength > 128) {
   generatePassword();
 } else {
 }
+
+
 //uppercase info
 var upper = confirm("Do you want your password to contain uppercase letters?");
 //pulls from uppercase array
@@ -42,6 +46,8 @@ if (upper) {
     potentialPw = potentialPw.concat(upperCase);
 } else { 
 }
+
+
 //lowercase info
 var lower = confirm("Do you want your password to contain lowercase letters?");
 //pulls from lowercase array
@@ -50,6 +56,8 @@ if (lower) {
   potentialPw = potentialPw.concat(lowerCase);
 } else {
 }
+
+
 //number info
 var number = confirm("Do you want your password to contain numbers?");
 //pulls from numberChars array
@@ -58,6 +66,8 @@ if (number) {
   potentialPw = potentialPw.concat(numberChars);
 } else{
 }
+
+
 //special character info
 var special = confirm("Do you want your password to contain special characters?");
 //pulls from specialChars array
@@ -66,6 +76,8 @@ if (special) {
   potentialPw = potentialPw.concat(specialChars);
 } else{
 }
+
+
 //password output for potential password
 var pw = []; 
 //loop 
@@ -77,7 +89,7 @@ for (let i = 0; i < passwordLength; i++){
 //refers to html id to print on the page
 return document.getElementById("password").innerHTML = pw.join("");
 
-//safety brace :) dont accidentally get rid of
+//safety brace :)
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
