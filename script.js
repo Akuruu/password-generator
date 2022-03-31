@@ -23,11 +23,13 @@ var passwordLength = prompt("How long would you like your password to be?");
 //establishing password length
 if (isNaN(passwordLength)) {
   alert("Please type a number")
+  //restarts function if user does not input a number
   generatePassword();
 } else
 //if password length doesn't meet the requirements then restart
 if (passwordLength < 8 || passwordLength > 128) {
   alert("Password must be between 8 and 128 characters");
+  //restarts functoin if user does not input the correct length
   generatePassword();
 } else {
 }
@@ -63,9 +65,9 @@ if (special) {
   potentialPw = potentialPw.concat(specialChars);
 } else{
 }
-//password output
+//password output for potential password
 var pw = []; 
-
+//loop 
 for (let i = 0; i < passwordLength; i++){
   var random = potentialPw[Math.floor(Math.random() * potentialPw.length)];
   pw.push(random);
@@ -74,7 +76,7 @@ for (let i = 0; i < passwordLength; i++){
 //refers to html id to print on the page
 return document.getElementById("password").innerHTML = pw.join("");
 
-//safety brace :)
+//safety brace :) dont accidentally get rid of
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
