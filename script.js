@@ -18,11 +18,9 @@ function writePassword() {
 
 }
 //example array to store possible passwords
-var potentialPw = [];
-//function to add characters to potentialPw array
-function Include() {
-  potentialPw = potentialPw.concat(array);
-}
+var potentialPw = []
+var random = []
+
 
 //password length
 function generatePassword() {
@@ -43,7 +41,7 @@ if (passwordLength < 8 || passwordLength > 128) {
 var upper = confirm("Do you want your password to contain uppercase letters?");
 //pulls from uppercase array
 if (upper) {
-
+    potentialPw = potentialPw.concat(upperCase);
 } else { 
 }
 
@@ -51,14 +49,14 @@ if (upper) {
 var lower = confirm("Do you want your password to contain lowercase letters?");
 //pulls from lowercase array
 if (lower) {
-
+  potentialPw = potentialPw.concat(lowerCase);
 } else {
 }
 //number info
 var number = confirm("Do you want your password to contain numbers?");
 //pulls from numberChars array
 if (number) {
-
+  potentialPw = potentialPw.concat(numberChars);
 } else{
 }
 
@@ -66,11 +64,21 @@ if (number) {
 var special = confirm("Do you want your password to contain special characters?");
 //pulls from specialChars array
 if (special) {
-
+  potentialPw = potentialPw.concat(specialChars);
 } else{
 }
 
+//password output
+var pw = []; 
 
+for (let i = 0; i < passwordLength; i++){
+  var random = potentialPw[Math.floor(Math.random() * potentialPw.length)];
+  pw.push(random);
+}
+
+return document.getElementById("password").innerHTML = potentialPw.join("");
+
+//safety brace :)
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
