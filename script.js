@@ -7,6 +7,7 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var specialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "=", "+", "(", ")", "{", "}", "[", "]", "?", "/", ">", "<", ".", ",", "~", "|"];
 
 //----------------------------------------------------------------------------------------------------------------------------
+//main function to write code in
 function writePassword() {
   var password = generatePassword();
   var passwordDiv = document.querySelector("#password");
@@ -15,12 +16,12 @@ function writePassword() {
 }
 //example array to store possible passwords
 var potentialPw = []
-var random = []
+
 
 //password length
 function generatePassword() {
 var passwordLength = prompt("How long would you like your password to be?");
-//establishing password length
+//NaN = Not a Number
 if (isNaN(passwordLength)) {
   alert("Please type a number")
   //restarts function if user does not input a number
