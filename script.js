@@ -88,8 +88,7 @@ for (let i = 0; i < passwordLength; i++){
 
 //refers to html id to print on the page
 return document.getElementById("password").innerHTML = pw.join("");
-
-//safety brace :)
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
